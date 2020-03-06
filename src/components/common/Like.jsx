@@ -5,6 +5,7 @@ const Like = ({ liked, onLike }) => {
     <i
       className={liked ? "fa fa-heart" : "fa fa-heart-o"}
       aria-hidden="true"
+      style={{ color: "#f00" }}
       onClick={onLike}
     />
   );

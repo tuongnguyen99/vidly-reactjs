@@ -1,34 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Contact from "./Contact";
+import { Link as NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/movies">
+      <NavLink className="navbar-brand" to="/movies">
         Vidly
-      </Link>
+      </NavLink>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/movies">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/movies">
               Movies <span className="sr-only">(current)</span>
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/contact">
+            <NavLink className="nav-link" to="/contact">
               Contact
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/login">
+            <NavLink className="nav-link" to="/login">
               Login
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/regiter">
+            <NavLink className="nav-link" to="/register">
               Register
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

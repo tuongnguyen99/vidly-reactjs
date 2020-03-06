@@ -1,46 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
+import Form from "./common/Form";
+import Joi from "joi-browser";
 
-class Login extends Component {
+class Login extends Form {
   state = {
-    username: "",
-    password: ""
+    data: { username: "", password: "" },
+    errors: {}
   };
 
-  validate = () => {};
-
-  handleInputChange = ({ currentTarget }) => {
-    this.setState({ [currentTarget.name]: currentTarget.value });
+  schema = {
+    username: Joi.string()
+      .required()
+      .label("Username"),
+    password: Joi.string()
+      .required()
+      .label("Password")
   };
+
+  doSubmit() {
+    ///
+    console.log("Sumited!");
+  }
+
   render() {
     return (
       <div className="container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              value={this.state.username}
-              className="form-control"
-              name="username"
-              id="username"
-              placeholder="Username"
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              className="form-control"
-              name="password"
-              id="password"
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+          {this.renderInput("username", "Username")}
+          {this.renderInput("password", "Password", "password")}
+          {this.renderSubmit("Submit")}
         </form>
       </div>
     );

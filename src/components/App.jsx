@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Contact from "./Contact";
 import Login from "./Login";
+import Register from "./Register";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route path="/movies" component={Movies} />
             <Route path="/contact" component={Contact} />
             <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
             <Redirect to="/movies" />
           </Switch>
         </div>
