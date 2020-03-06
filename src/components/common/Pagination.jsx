@@ -4,9 +4,10 @@ import _ from "lodash";
 const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
   const pagesCount = itemsCount / pageSize;
   const pageNumbers = _.range(1, pagesCount + 1);
+  if (pageNumbers < 2) return null;
   return (
     <nav aria-label="Page navigation">
-      <ul class="pagination">
+      <ul className="pagination">
         {pageNumbers.map(number => {
           return (
             <li
