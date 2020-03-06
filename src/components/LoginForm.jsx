@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./common/Form";
 import Joi from "joi-browser";
 
-class Login extends Form {
+class LoginForm extends Form {
   state = {
     data: { username: "", password: "" },
     errors: {}
@@ -19,7 +19,7 @@ class Login extends Form {
 
   doSubmit() {
     ///
-    console.log("Sumited!");
+    console.log("Sumitted!");
   }
 
   render() {
@@ -36,4 +36,4 @@ class Login extends Form {
   }
 }
 
-export default Login;
+export default LoginForm;
